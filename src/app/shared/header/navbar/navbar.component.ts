@@ -1,7 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MenuItem, MENU_ITEMS } from '../../../app.routes';
+import { MENU_ITEMS, MenuItem } from '../../../app.routes';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +11,13 @@ import { MenuItem, MENU_ITEMS } from '../../../app.routes';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  private platformId = inject(PLATFORM_ID);
-  isDarkTheme = signal(this.getInitialTheme());
-  isMenuOpen = false;
-  menuItems: MenuItem[] = MENU_ITEMS;
+  private platformId = inject(PLATFORM_ID); // Injection de l'identifiant de la plateforme
+  isDarkTheme = signal(this.getInitialTheme()); // Signal pour gérer le thème sombre
+  isMenuOpen = false; // État pour savoir si le menu est ouvert
+  menuItems: MenuItem[] = MENU_ITEMS; // Liste des éléments du menu
 
   private getInitialTheme(): boolean {
+    // Détermine le thème initial en fonction du stockage local
     if (isPlatformBrowser(this.platformId)) {
       return localStorage.getItem('theme') === 'dark';
     }
@@ -24,6 +25,7 @@ export class NavbarComponent {
   }
 
   toggleDarkTheme() {
+    // Bascule entre le thème clair et sombre
     this.isDarkTheme.update((value) => !value);
     if (isPlatformBrowser(this.platformId)) {
       document.documentElement.classList.toggle('dark');
@@ -32,6 +34,7 @@ export class NavbarComponent {
   }
 
   toggleMenu() {
+    // Bascule l'état d'ouverture du menu
     this.isMenuOpen = !this.isMenuOpen;
   }
 }
