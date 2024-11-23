@@ -1,0 +1,67 @@
+<!-- navbar-->
+<nav
+  class="bg-background dark:bg-dark-background w-full mx-auto p-4 flex items-center justify-between md:justify-around flex-wrap md:p-5"
+>
+  <!-- Logo à gauche -->
+  <a
+    aria-label="Accueil du portfolio"
+    class="text-xl lg:text-2xl text-text dark:text-dark-text font-bold font-heading order-1 text-shadow-red"
+  >
+    <p class="flex items-center">
+      <img src="assets/images/angular.svg" alt="logo" class="w-10 h-10 mr-2" />
+      <span>Djoudj.Dev</span>
+    </p>
+  </a>
+  <!-- Menu à droite -->
+  <div class="order-2 lg:order-3 flex items-center">
+    <button class="block lg:hidden" id="burger">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-text dark:text-dark-text"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+    <ul
+      id="main-navlist"
+      class="hidden w-full pt-4 text-text dark:text-dark-text lg:flex lg:items-center lg:w-auto lg:justify-center lg:space-x-6 lg:pt-0"
+    >
+      <li class="block py-3 lg:inline lg:py-0">
+        <a
+          [routerLink]="['/about']"
+          class="hover:text-accent dark:hover:text-dark-accent text-xl font-body font-normal"
+          >À propos</a
+        >
+      </li>
+      <li class="block py-3 lg:inline lg:py-0">
+        <a
+          [routerLink]="['/projects']"
+          class="hover:text-accent dark:hover:text-dark-accent text-xl font-body font-normal"
+          >Projets</a
+        >
+      </li>
+      <li class="block py-3 lg:inline lg:py-0">
+        <a
+          [routerLink]="['/stack']"
+          class="hover:text-accent dark:hover:text-dark-accent text-xl font-body font-normal"
+          >Stacks</a
+        >
+      </li>
+      <li class="block py-3 lg:inline lg:py-0">
+        <a
+          [routerLink]="['/contact']"
+          class="hover:text-accent dark:hover:text-dark-accent text-xl font-body font-normal"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
