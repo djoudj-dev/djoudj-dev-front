@@ -1,7 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MENU_ITEMS, MenuItem } from '../../../app.routes';
+import { MENU_ITEMS, MenuItem } from '../../app.routes';
 
 @Component({
   selector: 'app-navbar',
