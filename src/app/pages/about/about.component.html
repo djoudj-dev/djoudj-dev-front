@@ -1,0 +1,73 @@
+<section id="about" class="bg-background dark:bg-dark-background mt-16">
+  <div class="container mx-auto px-5 py-12">
+    <!-- Titre principal centré -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-text dark:text-dark-text">
+        {{ aboutData().title }}
+        <span class="text-primary dark:text-dark-primary">Djoudj</span>,
+        {{ aboutData().subtitle }}
+      </h1>
+      <h3 class="text-xl md:text-2xl font-bold text-text dark:text-dark-text">
+        De la métallurgie au développement web.
+      </h3>
+    </div>
+    <!-- Contenu principal -->
+    <div
+      class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6 justify-center"
+    >
+      <!-- Photo de profil avec ombre et coins arrondis -->
+      <div class="flex flex-col items-center space-y-4">
+        <img
+          [src]="aboutData().profileImage"
+          alt="Photo de Djoudj"
+          loading="lazy"
+          class="rounded-md shadow-lg w-48 h-48 md:w-60 md:h-60 object-cover"
+        />
+        <!-- Bouton Mon CV -->
+        <div class="flex flex-col items-center gap-4 mt-4">
+          <a
+            [href]="aboutData().cvLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-secondary text-text dark:text-dark-text rounded-lg transition-colors duration-300"
+          >
+            <img
+              src="assets/images/download.svg"
+              alt="Icône de téléchargement"
+              class="h-5 w-5 dark:invert"
+            />
+            <span class="font-bold text-text dark:text-dark-text">Mon CV</span>
+          </a>
+          <!-- Icônes des réseaux sociaux -->
+          <div class="flex gap-4">
+            @for (link of aboutData().socialLinks; track link) {
+            <img
+              [src]="link.icon"
+              [alt]="link.name"
+              class="h-8 w-8 filter dark:invert"
+            />
+            }
+          </div>
+        </div>
+      </div>
+      <!-- Texte de présentation à droite -->
+      <div class="w-full md:w-2/3 space-y-4 text-text dark:text-dark-text px-4">
+        <!-- Blocs de texte avec icônes -->
+        <div class="grid grid-cols-1 gap-2.5">
+          @for (block of aboutData().textBlocks; track $index) {
+          <div
+            class="flex items-start p-4 rounded-lg bg-primary hover:bg-secondary text-text dark:text-dark-text shadow-md space-x-4"
+          >
+            <img
+              [src]="block.icon"
+              class="h-6 w-6 dark:invert"
+              [alt]="'Icône descriptive'"
+            />
+            <p>{{ block.content }}</p>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
