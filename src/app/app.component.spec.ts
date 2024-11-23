@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { provideRouter } from '@angular/router';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
