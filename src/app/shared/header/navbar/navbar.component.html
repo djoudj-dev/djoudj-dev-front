@@ -36,13 +36,13 @@
     </ul>
     <!-- Contrôles à droite -->
     <div class="flex items-center order-3">
-      <!-- Bouton thème -->
+      <!-- Bouton pour basculer le thème -->
       <button
         (click)="toggleDarkTheme()"
         class="ml-4 p-2 rounded-lg hover:bg-primary/10 dark:hover:bg-dark-primary/10"
         aria-label="Basculer le thème clair/sombre"
       >
-        <!-- Icône Soleil -->
+        <!-- Icône Soleil pour le thème clair -->
         @if (!isDarkTheme()) {
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +59,7 @@
           />
         </svg>
         } @else {
+        <!-- Icône Lune pour le thème sombre -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 text-text dark:text-dark-text"
@@ -75,7 +76,7 @@
         </svg>
         }
       </button>
-      <!-- Bouton hamburger -->
+      <!-- Bouton hamburger pour le menu mobile -->
       <button
         (click)="toggleMenu()"
         aria-controls="main-navlist"
@@ -84,6 +85,7 @@
         class="cursor-pointer w-7 md:hidden ml-2"
       >
         @if (!isMenuOpen) {
+        <!-- Icône pour ouvrir le menu -->
         <img
           width="28"
           height="28"
@@ -92,6 +94,7 @@
           class="filter dark:invert"
         />
         } @else {
+        <!-- Icône pour fermer le menu -->
         <img
           width="28"
           height="28"
@@ -103,7 +106,7 @@
       </button>
     </div>
   </div>
-  <!-- Menu mobile -->
+  <!-- Menu mobile affiché lorsque isMenuOpen est vrai -->
   @if (isMenuOpen) {
   <ul
     id="main-navlist-mobile"
