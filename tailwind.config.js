@@ -5,9 +5,9 @@ module.exports = {
     colors: {
       text: "#050606",
       background: "#f6f8f9",
-      primary: "#699aab",
-      secondary: "#a3c7d1",
-      accent: "#71aec1",
+      primary: "#4a90e2",
+      secondary: "#2b6cb0",
+      accent: "#7fb8f2",
     },
     fontSize: {
       sm: "0.750rem",
