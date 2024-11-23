@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { NavbarComponent } from './shared/header/navbar/navbar.component';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -9,7 +9,8 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, BrowserModule, AppComponent],
+      providers: [provideRouter([])],
+      imports: [AppComponent, NavbarComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -17,16 +18,17 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('devrait créer le composant', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have the 'djoudj-dev-front' title`, () => {
-    expect(component.title).toEqual('djoudj-dev-front');
+  it(`devrait avoir le titre 'djoudj-dev-front'`, () => {
+    expect(component.title).toBe('djoudj-dev-front');
   });
 
-  it('should render title', () => {
+  it('devrait contenir le composant navbar', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello world!');
+    const navbar = compiled.querySelector('app-navbar');
+    expect(navbar).toBeTruthy();
   });
 });
