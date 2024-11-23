@@ -1,11 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
-interface MenuItem {
-  route: string;
-  label: string;
-}
+import { MenuItem, MENU_ITEMS } from '../../../app.routes';
 
 @Component({
   selector: 'app-navbar',
@@ -18,13 +14,7 @@ export class NavbarComponent {
   private platformId = inject(PLATFORM_ID);
   isDarkTheme = signal(this.getInitialTheme());
   isMenuOpen = false;
-
-  menuItems: MenuItem[] = [
-    { route: '/about', label: 'À propos' },
-    { route: '/projects', label: 'Projets' },
-    { route: '/stack', label: 'Stacks' },
-    { route: '/contact', label: 'Contact' },
-  ];
+  menuItems: MenuItem[] = MENU_ITEMS;
 
   private getInitialTheme(): boolean {
     if (isPlatformBrowser(this.platformId)) {
