@@ -32,7 +32,7 @@
             class="flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-secondary text-text dark:text-dark-text rounded-lg transition-colors duration-300 transform hover:scale-105"
           >
             <img
-              src="assets/images/download.svg"
+              src="assets/images/icons/download.svg"
               alt="Icône de téléchargement"
               class="h-5 w-5 dark:invert"
             />
@@ -47,7 +47,11 @@
               rel="noopener noreferrer"
               class="transition-transform duration-600 transform hover:scale-105"
             >
-              <img [src]="link.icon" [alt]="link.name" class="h-8 w-8 filter" />
+              <img
+                [src]="link.icon"
+                [alt]="link.name"
+                class="h-8 w-8 filter dark:invert"
+              />
             </a>
             }
           </div>
