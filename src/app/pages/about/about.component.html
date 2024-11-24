@@ -29,7 +29,7 @@
             [href]="aboutData().cvLink"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-secondary text-text dark:text-dark-text rounded-lg transition-colors duration-300"
+            class="flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-secondary text-text dark:text-dark-text rounded-lg transition-colors duration-300 transform hover:scale-105"
           >
             <img
               src="assets/images/download.svg"
@@ -56,7 +56,7 @@
         <div class="grid grid-cols-1 gap-2.5">
           @for (block of aboutData().textBlocks; track $index) {
           <div
-            class="flex items-start p-4 rounded-lg bg-primary hover:bg-secondary text-text dark:text-dark-text shadow-md space-x-4"
+            class="flex items-start p-4 rounded-md bg-primary hover:bg-secondary text-text dark:text-dark-text shadow-md space-x-4 transition-transform duration-300 transform hover:scale-105"
           >
             <img
               [src]="block.icon"
