@@ -7,8 +7,8 @@ export interface MenuItem {
 
 export const MENU_ITEMS: MenuItem[] = [
   { route: '/about', label: 'À propos' },
-  { route: '/projects', label: 'Projets' },
-  { route: '/stack', label: 'Stacks' },
+  { route: '/projects', label: 'Réalisations' },
+  { route: '/stack', label: 'Compétences' },
   { route: '/contact', label: 'Contact' },
 ];
 
