@@ -41,11 +41,14 @@
           <!-- Icônes des réseaux sociaux -->
           <div class="flex gap-4">
             @for (link of aboutData().socialLinks; track link) {
-            <img
-              [src]="link.icon"
-              [alt]="link.name"
-              class="h-8 w-8 filter dark:invert"
-            />
+            <a
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform duration-600 transform hover:scale-105"
+            >
+              <img [src]="link.icon" [alt]="link.name" class="h-8 w-8 filter" />
+            </a>
             }
           </div>
         </div>

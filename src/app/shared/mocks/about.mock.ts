@@ -7,17 +7,17 @@ export const ABOUT_MOCKS = {
     {
       name: 'GitHub',
       icon: 'assets/images/github.svg',
-      url: 'https://github.com',
+      url: 'https://github.com/djoudj-dev',
     },
     {
       name: 'LinkedIn',
       icon: 'assets/images/linkedin.svg',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/nedellec-julien/',
     },
     {
       name: 'Twitter',
       icon: 'assets/images/twitter.svg',
-      url: 'https://twitter.com',
+      url: 'https://x.com/Djoudj_Dev',
     },
   ],
   textBlocks: [
