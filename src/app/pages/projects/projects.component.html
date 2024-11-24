@@ -2,10 +2,11 @@
   <div class="container mx-auto px-5">
     <!-- Titre principal centré -->
     <h1
-      class="text-3xl md:text-4xl font-bold text-center mb-8 text-text dark:text-dark-text"
+      class="text-3xl md:text-4xl font-bold text-center mb-2 text-text dark:text-dark-text"
     >
       Mes Réalisations
     </h1>
+    <div class="h-1 bg-primary mx-auto w-96 mb-8"></div>
   </div>
   <div
     class="flex flex-col md:flex-row justify-center space-y-4 md:space-x-4 md:space-y-0 mb-8 px-5"
@@ -15,7 +16,7 @@
       class="bg-background dark:bg-primary text-text dark:text-dark-text p-6 rounded-lg border-primary dark:border-background border transition-transform duration-300 transform hover:scale-105 w-full md:max-w-md"
     >
       <img
-        class="inline-block w-12 h-12 mr-2 dark:invert"
+        class="inline-block w-auto h-auto mr-2 rounded-md"
         src="{{ project.image }}"
         alt="{{ project.title }} image"
       />
@@ -26,10 +27,25 @@
           >
             {{ project.title }}
           </h5>
+          <div class="h-0.5 bg-primary dark:bg-background w-28 mb-8"></div>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p class="mb-3 font-normal text-text dark:text-dark-text">
           {{ project.description }}
         </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          @for (stack of project.stacks; track stack) {
+          <span
+            class="inline-flex items-center px-2 py-1 text-sm bg-primary/10 dark:bg-background/10 rounded-md text-primary dark:text-background border border-primary dark:border-background"
+          >
+            <img
+              [src]="stack.icon"
+              [alt]="stack.name + ' icon'"
+              class="w-4 h-4 mr-1 dark:invert"
+            />
+            {{ stack.name }}
+          </span>
+          }
+        </div>
         <app-button text="Live Demo" iconSrc="assets/images/icons/view.svg" />
       </div>
     </div>
