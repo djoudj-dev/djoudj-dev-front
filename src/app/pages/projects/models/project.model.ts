@@ -1,3 +1,5 @@
+import { StackItem } from '../../stacks/models/stacks.model';
+
 export interface Project {
   title: string;
   image: string;
@@ -5,4 +7,5 @@ export interface Project {
   url: string;
   created_at: string;
   updated_at: string;
+  stacks: StackItem[];
 }
