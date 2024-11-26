@@ -1,6 +1,6 @@
 export const ABOUT_MOCKS = {
-  title: 'Salut !! Je suis',
-  subtitle: 'développeur Angular/Java',
+  name: 'Julien Nédellec',
+  subname: 'Djoudj',
   profileImage: 'assets/images/profil.png',
   cvLink: 'assets/documents/CV_Nedellec-Julien_Developpeur-Web.pdf',
   socialLinks: [

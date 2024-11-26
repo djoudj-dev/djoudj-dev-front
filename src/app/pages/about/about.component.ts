@@ -11,8 +11,8 @@ import { AboutModel } from './models/about.model';
 export class AboutComponent {
   aboutData = signal<AboutModel>(ABOUT_MOCKS);
 
-  title = computed(() => this.aboutData().title);
-  subtitle = computed(() => this.aboutData().subtitle);
+  name = computed(() => this.aboutData().name);
+  subname = computed(() => this.aboutData().subname);
   profileImage = computed(() => this.aboutData().profileImage);
   cvLink = computed(() => this.aboutData().cvLink);
   socialLinks = computed(() => this.aboutData().socialLinks);
