@@ -3,10 +3,19 @@
     <!-- Titre principal centré -->
     <div class="text-center mb-8">
       <h1 class="text-3xl md:text-4xl font-bold text-text dark:text-dark-text">
-        {{ aboutData().title }}
-        <span class="text-primary dark:text-dark-primary">Djoudj</span>,
-        {{ aboutData().subtitle }}
+        Salut !! Je suis
+        <span class="text-primary dark:text-dark-primary">{{
+          aboutData().name
+        }}</span>
+        alias
+        <span class="text-primary dark:text-dark-primary">{{
+          aboutData().subname
+        }}</span
+        >,<br />
+        passionné par le développement web, je crée des solutions modernes et
+        performantes.
       </h1>
+      <div class="h-1 bg-primary mx-auto w-96 my-8"></div>
       <h3 class="text-xl md:text-2xl font-bold text-text dark:text-dark-text">
         De la métallurgie au développement web.
       </h3>
@@ -19,7 +28,7 @@
       <div class="flex flex-col items-center space-y-4">
         <img
           [src]="aboutData().profileImage"
-          alt="Photo de Djoudj"
+          alt="Djoudj"
           loading="lazy"
           class="rounded-md shadow-lg w-48 h-48 md:w-60 md:h-60 object-cover"
         />
